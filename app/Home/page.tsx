@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Gallery from "../components/Gallary"
+import Link from "next/link";
+import ServicesList from "../Services/page";
 export default function HomePage() {
   return (
     <div className="pt-10 bg-gray-50 text-gray-900">
@@ -11,9 +13,9 @@ export default function HomePage() {
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-shadow">
           Premium car repair, doorstep service & emergency support. Specialists in German vehicles.
         </p>
-        <button className="mt-6 px-6 py-3 bg-red-600 hover:bg-red-700 rounded-lg text-white font-semibold">
-          Book a Mechanic
-        </button>
+        <Link href={'/CarServicing'}><button className="mt-6 px-6 py-3 bg-red-600 hover:bg-red-700 rounded-lg text-white font-semibold">
+          Book a Service
+        </button></Link>
       </section>
       <Gallery/>
 
@@ -43,6 +45,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <ServicesList/>
+
       {/* Why Choose Section */}
       <section className="bg-white py-16 px-6">
         <h2 className="text-3xl font-bold text-center mb-12">Why Choose FindMachenic?</h2>
@@ -70,31 +74,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-10">Our Top Services</h2>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            'Full Car Service',
-            'Engine Diagnostics',
-            'German Car Specialist Repair',
-            'Battery Replacement',
-            'AC Repair & Coolant Top-up',
-            'Tyre & Wheel Care',
-            'Car Spa & Cleaning',
-            'Denting & Painting',
-            'Emergency Breakdown Assistance',
-          ].map((service) => (
-            <div
-              key={service}
-              className="bg-white shadow-md rounded-lg p-6 border hover:shadow-xl transition"
-            >
-              <h3 className="text-xl font-semibold">{service}</h3>
-            </div>
-          ))}
-        </div>
-      </section>
 
       
 

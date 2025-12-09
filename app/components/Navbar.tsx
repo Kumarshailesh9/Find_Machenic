@@ -54,17 +54,17 @@ export default function NavBar() {
           {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-8 text-sm font-medium">
             <li>
-              <a href="/oldcar" className="hover:underline">
-                Used Car
+              <a href="/about" className="hover:underline">
+                About
               </a>
             </li>
             <li>
-              <a href="/Emergency" className="hover:underline">
-                Emergency (SOS)
+              <a href="/CarServicing" className="hover:underline">
+                Book Service
               </a>
             </li>
             <li>
-              <a href="/services" className="hover:underline">
+              <a href="/Services" className="hover:underline">
                 Our Services
               </a>
             </li>

@@ -19,8 +19,8 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3 text-sm">
-              <li><a href="/home" className="hover:underline">Home</a></li>
-              <li><a href="/services" className="hover:underline">Services</a></li>
+              <li><a href="/" className="hover:underline">Home</a></li>
+              <li><a href="/Services" className="hover:underline">Services</a></li>
               <li><a href="/oldcar" className="hover:underline">Used Car</a></li>
               <li><a href="/Emergency" className="hover:underline">Emergency (SOS)</a></li>
             </ul>
@@ -31,7 +31,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-3 text-sm">
               <li><a href="/contact" className="hover:underline">Contact Us</a></li>
-              <li><a href="#" className="hover:underline">Help Center</a></li>
+              <li><a href="/contact" className="hover:underline">Help Center</a></li>
               <li><a href="#" className="hover:underline">Privacy Policy</a></li>
               <li><a href="#" className="hover:underline">Terms & Conditions</a></li>
             </ul>
@@ -41,7 +41,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
-              <li>Email: ashish@gmail.com</li>
+              <li>Email: ashishk45923@gmail.com</li>
               <li>Phone: +91 9818405088</li>
               <li>Location: Noida, Uttar Pradesh</li>
             </ul>
