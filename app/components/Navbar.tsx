@@ -84,17 +84,17 @@ export default function NavBar() {
         >
           <ul className="flex flex-col space-y-4 text-sm font-medium pb-4">
             <li>
-              <a href="/oldcar" className="hover:underline">
-                Used Car
+              <a href="/about" className="hover:underline">
+                About
               </a>
             </li>
             <li>
-              <a href="/Emergency" className="hover:underline">
-                Emergency (SOS)
+              <a href="/CarServicing" className="hover:underline">
+                Book Service
               </a>
             </li>
             <li>
-              <a href="/services" className="hover:underline">
+              <a href="/Services" className="hover:underline">
                 Our Services
               </a>
             </li>
