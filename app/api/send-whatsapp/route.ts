@@ -9,7 +9,9 @@ export async function POST(req: Request) {
       name,
       phone,
       carModel,
+      fuelType,        // ✅ NEW
       carNumber,
+      addOnService,    // ✅ NEW
       serviceType,
       serviceArea,
       address,
@@ -24,27 +26,33 @@ export async function POST(req: Request) {
     );
 
     const formattedMessage = `
-*New Car Service Request*  
+*🚗 New Car Service Booking*
 ----------------------------------
 👤 *Name:* ${name}
 📞 *Phone:* ${phone}
-🚗 *Car Model:* ${carModel}
-🔢 *Car Number:* ${carNumber}
-🛠 *Service Type:* ${serviceType}
+
+🚘 *Vehicle Model:* ${carModel}
+⛽ *Fuel Type:* ${fuelType || "N/A"}
+🔢 *Vehicle Number:* ${carNumber || "N/A"}
+
+🛠 *Main Service:* ${serviceType}
+➕ *Add-on Service:* ${addOnService || "None"}
+
 📍 *Service Area:* ${serviceArea}
 🏠 *Address:* ${address}
-📅 *Preferred Date:* ${date}
 
-📝 *Notes:* ${notes}
+📅 *Preferred Date:* ${date || "Flexible"}
 
-🚗 *Free Pickup & Drop:* Available
+📝 *Notes:* ${notes || "No additional notes"}
+
+🚗 *Free Pickup & Drop:* Under 15 KM
 ----------------------------------
     `;
 
-    // ⭐ SEND WHATSAPP MESSAGE
+    // SEND WHATSAPP MESSAGE
     const message = await client.messages.create({
-      from: `whatsapp:${process.env.TWILIO_WHATSAPP_FROM}`, // your Twilio WhatsApp number
-      to: `whatsapp:${process.env.ADMIN_WHATSAPP_NUMBER}`, // your admin number
+      from: `whatsapp:${process.env.TWILIO_WHATSAPP_FROM}`,
+      to: `whatsapp:${process.env.ADMIN_WHATSAPP_NUMBER}`,
       body: formattedMessage,
     });
 
@@ -52,8 +60,12 @@ export async function POST(req: Request) {
       success: true,
       messageId: message.sid,
     });
+
   } catch (error) {
     console.error("WhatsApp sending error:", error);
-    return NextResponse.json({ success: false, error }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: "Failed to send WhatsApp message" },
+      { status: 500 }
+    );
   }
 }

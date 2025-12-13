@@ -43,7 +43,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li>Email: ashishk45923@gmail.com</li>
               <li>Phone: +91 9818405088</li>
-              <li>Location: Noida, Uttar Pradesh</li>
+              <li>Location: Sector 15, Noida, Uttar Pradesh</li>
             </ul>
           </div>
         </div>

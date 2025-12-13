@@ -40,7 +40,7 @@ export default function ContactPage() {
           <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
             <FaMapMarkerAlt className="text-blue-600 text-4xl mx-auto mb-4" />
             <h3 className="font-semibold mb-2">Location</h3>
-            <p className="text-gray-700 text-sm">Noida, Uttar Pradesh</p>
+            <p className="text-gray-700 text-sm">Sector 15, Noida, Uttar Pradesh</p>
           </div>
         </div>
 
